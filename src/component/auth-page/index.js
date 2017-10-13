@@ -31,6 +31,15 @@ class AuthPage extends React.Component {
     })
   }
 
+  componentDidMount() {
+    let userToken = this.props.token ?
+    this.props.token :
+    JSON.parse(util.readCookie('pingme-token'));
+    console.log('TOKEN', userToken)
+
+    this.props.restoreSession(userToken);
+  }
+
   errorModalToggle() {
     let {stateError} = !this.state;
     this.setState({stateError});
@@ -78,10 +87,14 @@ class AuthPage extends React.Component {
     )
   }
 }
+let mapStateToProps = state => ({
+  token: state.token
+})
 
 let mapDispatchToProps = dispatch => ({
   login: user => dispatch(authActions.login(user)),
-  signup: user => dispatch(authActions.signup(user))
+  signup: user => dispatch(authActions.signup(user)),
+  restoreSession: token => dispatch(authActions.tokenSet(token))
 })
 
 export default connect(undefined, mapDispatchToProps)(AuthPage);

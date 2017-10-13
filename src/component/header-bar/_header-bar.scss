@@ -1,0 +1,29 @@
+@import '../../style/lib/vars';
+
+#header-bar {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: $primary;
+  height: 8vh;
+  padding: 1vh 0;
+  &>div:first-of-type {
+    float: left;
+    width: 6vh;
+    height: 6vh;
+    margin-top: 1vh;
+    margin-left: 2.5%;
+    background: blue;
+    border-radius: 100px;
+  }
+
+  .new-message {
+    max-width: 10vw;
+    max-height: 5vh;
+    margin: 1vh 2.5%;
+    float: right;
+    * {
+      fill: $white;
+    }
+  }
+}

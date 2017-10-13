@@ -37,8 +37,10 @@ class AuthPage extends React.Component {
     this.props.token :
     JSON.parse(util.readCookie('pingme-token'));
 
-    this.props.restoreSession(userToken);
-    if(userToken) this.props.restoreProfile();
+    Promise.resolve(this.props.restoreSession(userToken))
+    .then(() => {
+      if(userToken) this.props.restoreProfile();
+    });
   }
 
   errorModalToggle() {

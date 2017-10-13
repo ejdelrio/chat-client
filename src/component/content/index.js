@@ -10,7 +10,7 @@ class Content extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentView: ''
+      currentView: 'home'
     }
     this.componentSwitch = this.componentSwitch.bind(this);
     this.flipSwitch = this.flipSwitch.bind(this);

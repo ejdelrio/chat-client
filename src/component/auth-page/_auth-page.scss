@@ -1,0 +1,31 @@
+@import '../../style/lib/vars';
+
+
+#auth-page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: radial-gradient($white 10%, transparent 100%, $primary 140%);
+
+  &>p {
+    position: absolute;
+    bottom: 0;
+    font-size: 4vw;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2vh;
+    span {
+      font-weight: bold;
+      color: blue;
+      cursor: pointer;
+    }
+  }
+}
+
+#auth-error {
+  float: right;
+  margin: 2.5vh 5%;
+  width: 90%;
+  height: 4vh;
+  font-size: 5vw;
+}

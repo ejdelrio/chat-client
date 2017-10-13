@@ -1,0 +1,51 @@
+@import '../../style/lib/vars';
+
+.auth-form {
+  width: 75%;
+  float: left;
+  margin: 25vh 10%;
+  padding: 2.5vh 2.5%;
+  background: $primary;
+  border-radius: 5px;
+  overflow: hidden;
+  &>button {
+    width: 90%;
+    height: 5vh;
+    margin: 2.5% 5%;
+    background: $second;
+    font-size: 5vw;
+    border-radius: 5px;
+  }
+}
+
+.signup {
+  background: pink;
+  transition: 350ms all ease-in-out;
+  height: 42.5vh;
+  &>input {
+    width: 80%;
+    height: 3vh;
+    padding: 1vh 5%;
+    margin: 1vh 5%;
+    font-size: 5vw;
+    border-radius: 5px;
+    animation-name: authFadeIn;
+    animation-duration: 2s;
+  }
+}
+
+.login {
+  transition: 350ms all ease-in-out;
+  height: 22.5vh;
+  &>input {
+    width: 80%;
+    height: 3vh;
+    padding: 2.5% 5%;
+    margin: 2.5% 5%;
+    font-size: 5vw;
+    border-radius: 5px;
+    animation-name: authFadeIn;
+    animation-duration: 1s;
+
+  }
+}

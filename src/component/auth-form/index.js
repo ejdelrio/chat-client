@@ -8,46 +8,37 @@ class AuthForm extends React.Component {
     this.state = {
       userName: '',
       email: '',
+      emailConfirm: '',
       passWord: '',
-      userNameError: null,
-      passWordError: null,
-      emailError: null,
-      error: null
+      passWordConfirm: ''
     }
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+
   onChange(e) {
     let { name, value } = e.target;
 
-    function errorCheck(errorName) {
-      return name === errorName && !value ? `${errorName} required` : null;
-    }
-
     this.setState({
       [name]: value,
-      userNameError: errorCheck('username'),
-      emailError: errorCheck('email'),
-      passWordError: errorCheck('password')
     })
   }
 
   onSubmit(e) {
     e.preventDefault();
+    let {setError, auth} = this.props;
+    let {email, emailConfirm, passWord, passWordConfirm} = this.state;
+    
+    if(auth === 'signup') {
+      if(email !== emailConfirm) return setError('You\'re confirmed email does not match');
+      if(passWord !== passWordConfirm) return setError('You\'re confirmed password does not match');
+    }
     this.props.onComplete(this.state)
-      .then(() => {
-        this.setState({
-          userName: '',
-          passWord: '',
-          email: ''
-        });
-        this.props.modalClose();
-      })
-      .catch(error => {
-        this.setState({ error });
-      })
+    .catch(error => {
+      if(error) this.props.setError(error.response.text);
+    })
   }
 
   render() {
@@ -60,10 +51,31 @@ class AuthForm extends React.Component {
         onChange={this.onChange}
       />
     )
+    let emailConfirm = (
+      <input
+        name='emailConfirm'
+        type='text'
+        placeholder='Confirm email address'
+        value={this.state.emailConfirm}
+        onChange={this.onChange}
+      />
+    )
+    let passWordConfirm = (
+      <input
+        name='passWordConfirm'
+        type='password'
+        placeholder='Confirm password'
+        value={this.state.passWordConfirm}
+        onChange={this.onChange}
+      />
+    )
 
 
     return (
-      <form onSubmit={this.onSubmit} className='auth-form'>
+      <form
+        onSubmit={this.onSubmit}
+        className={`auth-form ${this.props.auth}`}
+      >
 
         <input
           name='userName'
@@ -79,7 +91,9 @@ class AuthForm extends React.Component {
           placeholder='Enter a password'
           onChange={this.onChange}
         />
+        {util.renderIf(this.props.auth === 'signup', passWordConfirm)}
         {util.renderIf(this.props.auth === 'signup', emailInput)}
+        {util.renderIf(this.props.auth === 'signup', emailConfirm)}
         <button type='submit'>{this.props.auth}</button>
       </form>
     );

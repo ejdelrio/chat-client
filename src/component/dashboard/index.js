@@ -5,8 +5,8 @@ import {connect} from 'react-redux';
 import * as authActions from '../../action/auth-action.js';
 import * as util from '../../lib/util.js';
 
-import HeaderBar from '../header-bar';
 import ProfilePage from '../profile-page';
+import Content from '../content';
 
 class DashBoard extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class DashBoard extends React.Component {
   render() {
     return(
       <section id='dashboard'>
-        <HeaderBar
+        <Content
           profileClick={() => this.renderPage('profileView', 'profile-page')}
         />
         <ProfilePage

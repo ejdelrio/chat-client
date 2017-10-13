@@ -7,7 +7,7 @@ class HeaderBar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      search: ''
     }
   }
 
@@ -15,6 +15,15 @@ class HeaderBar extends React.Component {
     return(
       <section id='header-bar'>
         <div></div>
+        <section>
+          <div>{SVG.lens('')}</div>
+          <input
+            type='text'
+            name='search'
+            placeholder='Search'
+            value={this.state.search}
+          />
+        </section>
         {SVG.compose('new-message')}
       </section>
     )

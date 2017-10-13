@@ -14,7 +14,7 @@ class App extends React.Component {
       <BrowserRouter>
         <section>
           {util.renderIf(!this.props.token, <AuthPage />)}
-          {util.renderIf(this.props.token), <DashBoard />}
+          {util.renderIf(this.props.token, <DashBoard />)}
         </section>
       </BrowserRouter>
     );

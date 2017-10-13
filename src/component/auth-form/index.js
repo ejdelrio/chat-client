@@ -30,14 +30,15 @@ class AuthForm extends React.Component {
     e.preventDefault();
     let {setError, auth} = this.props;
     let {email, emailConfirm, passWord, passWordConfirm} = this.state;
-    
+
     if(auth === 'signup') {
       if(email !== emailConfirm) return setError('You\'re confirmed email does not match');
       if(passWord !== passWordConfirm) return setError('You\'re confirmed password does not match');
     }
     this.props.onComplete(this.state)
     .catch(error => {
-      if(error) this.props.setError(error.response.text);
+      let {response} = error;
+      if(response) this.props.setError(error.response.text);
     })
   }
 

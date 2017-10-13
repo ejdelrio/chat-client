@@ -9,12 +9,21 @@ class HeaderBar extends React.Component {
     this.state = {
       search: ''
     }
+    this.onChange = this.onChange.bind(this);
   }
-
+  onChange(e) {
+    let {name, value} = e.target;
+    this.setState({
+      [name]: value
+    });
+  }
   render() {
     return(
       <section id='header-bar'>
-        <div></div>
+        <div
+          onClick={this.props.profileClick}
+        >
+        </div>
         <section>
           <div>{SVG.lens('')}</div>
           <input
@@ -22,6 +31,7 @@ class HeaderBar extends React.Component {
             name='search'
             placeholder='Search'
             value={this.state.search}
+            onChange={this.onChange}
           />
         </section>
         {SVG.compose('new-message')}

@@ -3,6 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as authActions from '../../action/auth-action.js';
+import * as profileActions from '../../action/profile-action.js';
 import * as util from '../../lib/util.js';
 import AuthForm from '../auth-form';
 import Modal from '../modal';
@@ -35,9 +36,9 @@ class AuthPage extends React.Component {
     let userToken = this.props.token ?
     this.props.token :
     JSON.parse(util.readCookie('pingme-token'));
-    console.log('TOKEN', userToken)
 
     this.props.restoreSession(userToken);
+    if(userToken) this.props.restoreProfile();
   }
 
   errorModalToggle() {
@@ -94,7 +95,8 @@ let mapStateToProps = state => ({
 let mapDispatchToProps = dispatch => ({
   login: user => dispatch(authActions.login(user)),
   signup: user => dispatch(authActions.signup(user)),
-  restoreSession: token => dispatch(authActions.tokenSet(token))
+  restoreSession: token => dispatch(authActions.tokenSet(token)),
+  restoreProfile: () => dispatch(profileActions.profileGet())
 })
 
 export default connect(undefined, mapDispatchToProps)(AuthPage);

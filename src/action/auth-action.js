@@ -1,5 +1,7 @@
 import superagent from 'superagent';
+
 import * as util from '../lib/util.js';
+import * as profileActions from './profile-action.js';
 
 
 export const tokenSet = token => ({
@@ -18,6 +20,7 @@ export const login = user => dispatch => {
   .then(res => {
     util.createCookie('pingme-token', res.text, 1);
     dispatch(tokenSet(JSON.parse(res.text)));
+    dispatch(profileActions.getProfile());
     return res;
   })
 }
@@ -28,6 +31,7 @@ export const signup = user => dispatch => {
   .then(res => {
     util.createCookie('pingme-token', res.text, 1);
     dispatch(tokenSet(JSON.parse(res.text)));
+    dispatch(profileActions.getProfile())
     return res;
   })
 }

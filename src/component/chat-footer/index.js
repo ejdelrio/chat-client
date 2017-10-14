@@ -1,7 +1,9 @@
 import './_chat-footer.scss';
 import React from 'react';
+import {connect} from 'react-redux';
 
 import * as SVG from '../svgs';
+import * as util from '../../lib/util.js';
 
 class ChatFooter extends React.Component {
   constructor(props) {
@@ -35,6 +37,10 @@ class ChatFooter extends React.Component {
   }
 
   render() {
+    let {recieved} = this.props.requests
+    let newRequests = recieved.reduce((count, val) =>{
+      return count + (val.status === 'sent');
+    },0)
     return(
       <section id='chat-footer'>
         <div
@@ -53,6 +59,7 @@ class ChatFooter extends React.Component {
           className={this.state.requestsClass}
         >
           {SVG.request('requests')}
+          {util.renderIf(newRequests > 0, <p>{newRequests}</p>)}
         </div>
         <div
           onClick={() => this.renderParent('lookupClass', 'search-user')}
@@ -64,5 +71,8 @@ class ChatFooter extends React.Component {
     )
   }
 }
+let mapStateToProps = state => ({
+  requests: state.requests
+})
 
-export default ChatFooter;
+export default connect(mapStateToProps, undefined)(ChatFooter);

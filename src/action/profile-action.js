@@ -26,7 +26,7 @@ export const profileGet = () => (dispatch, getState) => {
   .then(res => {
     dispatch(createProfile(res.body));
     dispatch(socketActions.connectSocket(res.body));
-    dispatch(requestActions.fetchRequests(res.body.requests, res.body.userName));
+    dispatch(requestActions.fetchRequests(res.body.requests, res.body));
     return res;
   })
 }

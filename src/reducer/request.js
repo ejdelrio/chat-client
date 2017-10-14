@@ -13,13 +13,21 @@ module.exports = (state=initState, action) => {
       let newState = {...state};
       return payload.reduce((obj, request) => {
         let {from, status} = request;
-        status.from === profile.userName ? obj.sent.push(request) : obj.recieved.push(request);
+        from === profile.userName ? obj.sent.push(request) : obj.recieved.push(request);
         return obj;
       }, newState);
 
     case 'REQUEST_CREATE':
-      let newArray = [...state[payload.status], payload];
-      return {...state, [payload.status]: newArray};
+    console.log(profile.userName);
+      let status = profile.userName === payload.from ? 'sent' : 'recieved';
+      let newArray = [...state[status], payload];
+      return {...state, [status]: newArray};
+    case 'REEQUEST_UPDATE':
+      let status = profile.userName === payload.from ? 'sent' : 'recieved':
+      let newArr = state[status].map((obj, ind) => {
+        return obj._id === payload._id ? payload : obj;
+      });
+      return {...state, [status]: newArr};
     default:
       return state;
   }

@@ -11,6 +11,9 @@ class Requests extends React.Component {
   render() {
     return(
       <section id='requests'>
+        <div>
+          <p>Contact Requests</p>
+        </div>
       </section>
     )
   }
@@ -18,6 +21,7 @@ class Requests extends React.Component {
 
 let mapStateToProps = state => ({
   profile: state.profile,
+  requests: state.requests
 })
 
 export default connect(mapStateToProps, undefined)(Requests);

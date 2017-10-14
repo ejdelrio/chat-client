@@ -1,5 +1,6 @@
 import superagent from 'superagent';
 import * as socketActions from './socket-action.js';
+import * as requestActions from './request-action.js';
 
 
 
@@ -23,8 +24,9 @@ export const profileGet = () => (dispatch, getState) => {
   return superagent(`${__API_URL__}/api/profile`)
   .set('Authorization', `Bearer ${token}`)
   .then(res => {
-    dispatch(createProfile(res.body))
-    dispatch(socketActions.connectSocket(res.body))
+    dispatch(createProfile(res.body));
+    dispatch(socketActions.connectSocket(res.body));
+    dispatch(requestActions.fetchRequests(res.body.requests, res.body.userName));
     return res;
   })
 }

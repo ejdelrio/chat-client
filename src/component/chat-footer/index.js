@@ -43,13 +43,13 @@ class ChatFooter extends React.Component {
           {SVG.home('')}
         </div>
         <div
-          onClick={() => this.renderParent('contactsClass')}
+          onClick={() => this.renderParent('contactsClass', 'contacts')}
           className={this.state.contactsClass}
         >
           {SVG.contacts('')}
         </div>
         <div
-          onClick={() => this.renderParent('requestsClass')}
+          onClick={() => this.renderParent('requestsClass', 'requests')}
           className={this.state.requestsClass}
         >
           {SVG.request('requests')}

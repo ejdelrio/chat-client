@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import superagent from 'superagent';
 
 import * as SVG from '../svgs';
+import * as requestActions from '../../action/request-action.js';
 
 class SearchUser extends React.Component {
   constructor(props) {
@@ -55,7 +56,11 @@ class SearchUser extends React.Component {
             <li key={ind}>
               <div></div>
               <p>{ele.userName}</p>
-              <button>+</button>
+              <button
+                onClick={() => this.props.sendRequest(ele)}
+              >
+                +
+              </button>
             </li>
           )
         })}
@@ -68,4 +73,8 @@ let mapStateToProps = state => ({
   token: state.token
 })
 
-export default connect(mapStateToProps, undefined)(SearchUser);
+let mapDispatchToProps = dispatch => ({
+  sendRequest: profile => dispatch(requestActions.sendRequest(profile))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchUser);

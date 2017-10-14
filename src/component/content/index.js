@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 import Home from '../home';
 import SearchUser from '../search-user';
+import Requests from '../requests';
 import ChatFooter from '../chat-footer';
 
 class Content extends React.Component {
@@ -23,9 +24,9 @@ class Content extends React.Component {
             profileClick={this.props.profileClick}
           />
         );
-      case 'contacts':
+      case 'requests':
         return (
-          ''
+          <Requests />
         );
       case 'search-user':
         return (

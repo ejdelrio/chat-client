@@ -1,1 +1,23 @@
 @import '../../style/lib/vars';
+
+#requests {
+  width: 100%;
+  height: 90vh;
+  background: orange;
+  float: left;
+
+  &>div:first-of-type {
+    width: 100%;
+    float: left;
+    height: 6vh;
+    padding: 1.5vh;
+    background: $primary;
+    p {
+      width: 100%;
+      height: 5vh;
+      padding: 1vh 0;;
+      font-size: 4vh;
+      text-align: center;
+    }
+  }
+}

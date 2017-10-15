@@ -1,6 +1,14 @@
 let initState = {
-  sent: [],
-  recieved: []
+  sent: {
+    pending: [],
+    accepted: [],
+    rejected: []
+  },
+  received: {
+    pending: [],
+    accepted: [],
+    rejected: []
+  }
 };
 
 
@@ -10,25 +18,28 @@ module.exports = (state=initState, action) => {
   switch(type) {
     case 'REQUEST_FETCH':
 
-      let newState = {...state};
-      return payload.reduce((obj, request) => {
-        let {from, status} = request;
-        from === profile.userName ? obj.sent.push(request) : obj.recieved.push(request);
-        return obj;
-      }, newState);
+     return payload;
 
     case 'REQUEST_CREATE':
-    console.log(profile.userName);
-      let status = profile.userName === payload.from ? 'sent' : 'recieved';
-      let newArray = [...state[status], payload];
-      return {...state, [status]: newArray};
-    case 'REEQUEST_UPDATE':
-      let status = profile.userName === payload.from ? 'sent' : 'recieved':
-      let newArr = state[status].map((obj, ind) => {
-        return obj._id === payload._id ? payload : obj;
-      });
-      return {...state, [status]: newArr};
+
+      let status = profile.userName === payload.from ? 'sent' : 'received';
+      let newStateObj = {...state[status]};
+      newStateObj[payload.status].push(payload);
+      return {...state, [status]: newStateObj};
+
+    case 'REQUEST_UPDATE':
+
+      let type = profile.userName === payload.from ? 'sent' : 'received';
+      let newState = {...state};
+      newState[type][payload.status].push(payload);
+
+      return {
+        ...newState,
+        pending: newState[status].pending.filter(req => req._id !== payload._id),
+      };
+
     default:
+
       return state;
   }
 

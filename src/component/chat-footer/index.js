@@ -37,10 +37,7 @@ class ChatFooter extends React.Component {
   }
 
   render() {
-    let {recieved} = this.props.requests
-    let newRequests = recieved.reduce((count, val) =>{
-      return count + (val.status === 'sent');
-    },0)
+    let {pending} = this.props.requests.received;
     return(
       <section id='chat-footer'>
         <div
@@ -59,7 +56,7 @@ class ChatFooter extends React.Component {
           className={this.state.requestsClass}
         >
           {SVG.request('requests')}
-          {util.renderIf(newRequests > 0, <p>{newRequests}</p>)}
+          {util.renderIf(pending.length > 0, <p>{pending.length}</p>)}
         </div>
         <div
           onClick={() => this.renderParent('lookupClass', 'search-user')}

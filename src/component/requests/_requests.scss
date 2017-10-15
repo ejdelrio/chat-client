@@ -45,6 +45,20 @@
         width: 100%;
         height: 8vh;
         outline: 1px solid $second;
+        position: relative;
+
+        div{
+          position: absolute;
+          width: 100%;
+          height: 8vh;
+        }
+
+        &:hover {
+          background: black;
+          p {
+            color: white;
+          }
+        }
       }
       li>p {
         float: left;

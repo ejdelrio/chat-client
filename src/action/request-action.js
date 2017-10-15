@@ -26,7 +26,7 @@ export const updateRequest = (request, profile) => ({
 export const rejectRequest = request => (dispatch, getState) => {
   let {token, profile} = getState();
 
-  return superagent.delete(`${__API_URL__}/api/friendrequest`)
+  return superagent.put(`${__API_URL__}/api/friendrequest/reject/`)
   .set('Authorization', `Bearer ${token}`)
   .send(request)
   .then(res => {
@@ -38,7 +38,7 @@ export const rejectRequest = request => (dispatch, getState) => {
 export const acceptRequest = request => (dispatch, getState) => {
   let {token, profile} = getState();
 
-  return superagent.put(`${__API_URL__}/api/friendrequest`)
+  return superagent.put(`${__API_URL__}/api/friendrequest/accept/${request._id}`)
   .set('Authorization', `Bearer ${token}`)
   .send(request)
   .then(res => {

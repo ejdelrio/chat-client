@@ -8,12 +8,16 @@ module.exports = (socket, getState, dispatch) => {
     dispatch(requestActions.createRequest(request, profile));
   });
 
-  for (let i = 0; i < requests.sent.length; i++) {
-    let contactRequest = requests.sent[i];
-    socket.on(`${requests.sent[i]._id}-rejectRequest`, updatedReq => {
-      dispatch(requestActions.updatedReq(updatedReq));
-    })
+
+  let {sent, received} = requests;
+
+  for (let ind in sent.pending) {
+    let contactReq = sent.pending[i];
+    socket.on(`${contactReq._id}-updateRequest`, request => {
+      dispatch(requestActions.updateRequest(request, profile));
+    });
   }
+
 
 
 

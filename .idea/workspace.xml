@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96bba6c0-3bc1-4915-9af4-e19856604c33" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/action/request-action.js" afterPath="$PROJECT_DIR$/src/action/request-action.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/chat-footer/index.js" afterPath="$PROJECT_DIR$/src/component/chat-footer/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/modal/index.js" afterPath="$PROJECT_DIR$/src/component/modal/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/modal/_modal.scss" afterPath="$PROJECT_DIR$/src/component/modal/_modal.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/requests/_requests.scss" afterPath="$PROJECT_DIR$/src/component/requests/_requests.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/requests/index.js" afterPath="$PROJECT_DIR$/src/component/requests/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/socket-router.js" afterPath="$PROJECT_DIR$/src/lib/socket-router.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducer/request.js" afterPath="$PROJECT_DIR$/src/reducer/request.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,8 +24,8 @@
       <file leaf-file-name="request-action.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/action/request-action.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="53" lean-forward="true" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
+            <state relative-caret-position="100">
+              <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
               <folding>
                 <element signature="e#92#151#0" expanded="true" />
               </folding>
@@ -54,17 +53,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/requests/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            <state relative-caret-position="-1072">
+              <caret line="42" column="84" lean-forward="true" selection-start-line="42" selection-start-column="84" selection-end-line="42" selection-end-column="84" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#332#392#0" expanded="true" />
-                <element signature="e#503#536#0" expanded="true" />
-                <element signature="e#2903#2959#0" expanded="true" />
-                <element signature="e#2999#3232#0" expanded="true" />
+                <element signature="e#559#592#0" expanded="true" />
+                <element signature="e#729#763#0" expanded="true" />
+                <element signature="e#3140#3196#0" expanded="true" />
+                <element signature="e#3237#3470#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,26 +82,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_requests.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/requests/_requests.scss">
+      <file leaf-file-name="_modal.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/modal/_modal.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+            <state relative-caret-position="340">
+              <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="request.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_requests.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/requests/_requests.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="request.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducer/request.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-88">
-              <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="253">
+              <caret line="36" column="72" lean-forward="false" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="72" />
               <folding>
                 <element signature="e#16#156#0" expanded="true" />
                 <element signature="e#26#83#0" expanded="true" />
                 <element signature="e#97#154#0" expanded="true" />
-                <element signature="e#763#875#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,12 +155,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/component/chat-footer/index.js" />
-        <option value="$PROJECT_DIR$/src/component/requests/_requests.scss" />
         <option value="$PROJECT_DIR$/src/component/modal/index.js" />
-        <option value="$PROJECT_DIR$/src/action/request-action.js" />
         <option value="$PROJECT_DIR$/src/lib/socket-router.js" />
-        <option value="$PROJECT_DIR$/src/component/requests/index.js" />
+        <option value="$PROJECT_DIR$/src/action/request-action.js" />
         <option value="$PROJECT_DIR$/src/reducer/request.js" />
+        <option value="$PROJECT_DIR$/src/component/modal/_modal.scss" />
+        <option value="$PROJECT_DIR$/src/component/requests/_requests.scss" />
+        <option value="$PROJECT_DIR$/src/component/requests/index.js" />
       </list>
     </option>
   </component>
@@ -214,6 +224,13 @@
               <item name="chat-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="modal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
               <item name="requests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -265,12 +282,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1508092720045</updated>
-      <workItem from="1508092721666" duration="7834000" />
+      <workItem from="1508092721666" duration="10574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7834000" />
+    <option name="totallyTimeSpent" value="10574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -325,24 +342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/requests/_requests.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/modal/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/socket-router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -363,37 +362,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/action/request-action.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="53" lean-forward="true" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
+        <state relative-caret-position="100">
+          <caret line="32" column="19" lean-forward="false" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
           <folding>
             <element signature="e#92#151#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/requests/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#332#392#0" expanded="true" />
-            <element signature="e#503#536#0" expanded="true" />
-            <element signature="e#2903#2959#0" expanded="true" />
-            <element signature="e#2999#3232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducer/request.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="253">
+          <caret line="36" column="72" lean-forward="false" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="72" />
           <folding>
             <element signature="e#16#156#0" expanded="true" />
             <element signature="e#26#83#0" expanded="true" />
             <element signature="e#97#154#0" expanded="true" />
-            <element signature="e#763#875#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/modal/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/modal/_modal.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/requests/_requests.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/requests/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1072">
+          <caret line="42" column="84" lean-forward="true" selection-start-line="42" selection-start-column="84" selection-end-line="42" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#332#392#0" expanded="true" />
+            <element signature="e#559#592#0" expanded="true" />
+            <element signature="e#729#763#0" expanded="true" />
+            <element signature="e#3140#3196#0" expanded="true" />
+            <element signature="e#3237#3470#0" expanded="true" />
           </folding>
         </state>
       </provider>

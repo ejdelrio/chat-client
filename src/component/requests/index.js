@@ -14,12 +14,22 @@ class Requests extends React.Component {
       acceptRequest: null,
       deleteRequest: null
     }
-  this.setRequest = this.setRequest.bind(this);
+    this.setRequest = this.setRequest.bind(this);
+    this.fireDispatch = this.fireDispatch.bind(this);
   }
 
   setRequest(currentRequest, status) {
     this.setState({
       [status]: currentRequest});
+  }
+  fireDispatch(dispatchName, stateKey) {
+    this.props[dispatchName](this.state[stateKey])
+    .then(() => {
+      this.setState({
+        [stateKey]: null
+      })
+    })
+
   }
 
   render() {
@@ -30,7 +40,7 @@ class Requests extends React.Component {
 
     let sentRequestOptions = (
       <div>
-        <button onClick={() => this.props.deleteRequest(this.state.deleteRequest)}>
+        <button onClick={() => this.fireDispatch('deleteRequest', 'deleteRequest')}>
           Delete Request?
         </button>
       </div>
@@ -38,10 +48,10 @@ class Requests extends React.Component {
 
     let receivedRequestOptions = (
       <div>
-        <button onClick={() => this.props.acceptRequest(this.state.acceptRequest)}>
+        <button onClick={() => this.fireDispatch('acceptRequest', 'acceptRequest')}>
           Accept Request
         </button>
-        <button onClick={() => this.props.rejectRequest(this.state.acceptRequest)}>
+        <button onClick={() => this.fireDispatch('rejectRequest', 'acceptRequest')}>
           Reject Request
         </button>
       </div>
@@ -110,8 +120,8 @@ let mapStateToProps = state => ({
   requests: state.requests
 })
 
-let mapDispatchToProps = dispath => ({
-  acceptRequest: request => dispacth(requestActions.acceptRequest(request)),
+let mapDispatchToProps = dispatch => ({
+  acceptRequest: request => dispatch(requestActions.acceptRequest(request)),
   rejectRequest: request => dispatch(requestActions.rejectRequest(request)),
   deleteRequest: request => dispatch(requestActions.deleteRequest(request))
 })

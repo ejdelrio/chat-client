@@ -5,6 +5,26 @@
   height: 90vh;
   float: left;
 
+  .request-modal {
+    div {
+      width: 100%;
+      height: 10vh;
+      float: left;
+      margin-top: 5vh;
+    }
+    div>button {
+      width: 80%;
+      height: 7.5vh;
+      float: left;
+      margin-left: 10%;
+      margin-top: 2.5vh;
+      background: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 4vh;
+    }
+  }
+
   &>div:first-of-type {
     width: 100%;
     float: left;

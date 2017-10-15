@@ -30,7 +30,7 @@ export const rejectRequest = request => (dispatch, getState) => {
   .set('Authorization', `Bearer ${token}`)
   .send(request)
   .then(res => {
-    dispatch(deleteRequest(request, profile));
+    dispatch(updateRequest(request, profile));
     return res;
   })
 }

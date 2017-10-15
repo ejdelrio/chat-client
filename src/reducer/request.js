@@ -29,14 +29,14 @@ module.exports = (state=initState, action) => {
 
     case 'REQUEST_UPDATE':
 
-      let type = profile.userName === payload.from ? 'sent' : 'received';
+      let reqType = profile.userName === payload.from ? 'sent' : 'received';
       let newState = {...state};
-      newState[type][payload.status].push(payload);
 
-      return {
-        ...newState,
-        pending: newState[status].pending.filter(req => req._id !== payload._id),
-      };
+      let sentPendingArray = newState[reqType]['pending']
+      newState[reqType][payload.status].push(payload);
+      newState[reqType]['pending'] = sentPendingArray.filter(val => val._id !== payload._id);
+
+      return newState;
 
     default:
 

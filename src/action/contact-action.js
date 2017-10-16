@@ -15,3 +15,8 @@ export const deleteContact = payload => ({
   payload
 })
 
+export const contactFetch = payload => ({
+  type: 'CONTACT_FETCH',
+  payload
+});
+

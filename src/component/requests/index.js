@@ -57,11 +57,6 @@ class Requests extends React.Component {
       </div>
     )
 
-
-
-
-
-
     return(
       <section id='requests'>
         {util.renderIf(this.state.acceptRequest || this.state.deleteRequest ,

@@ -42,17 +42,23 @@ export const acceptRequest = request => (dispatch, getState) => {
   .set('Authorization', `Bearer ${token}`)
   .send(request)
   .then(res => {
+    dispatch(updateRequest(request, profile));
     return res;
   })
 }
 
 export const sendRequest = request => (dispatch, getState) => {
-  let {token, profile} = getState();
+  let {token, profile, socket} = getState();
 
   return superagent.post(`${__API_URL__}/api/friendrequest`)
   .set('Authorization', `Bearer ${token}`)
   .send(request)
   .then(res => {
+
+    socket.on(`${res.body._id}-updateRequest`, item => {
+      dispatch(updateRequest(item, profile));
+    });
+
     dispatch(createRequest(res.body, profile));
     return res;
   });

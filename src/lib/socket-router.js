@@ -11,8 +11,9 @@ module.exports = (socket, getState, dispatch) => {
 
   let {sent, received} = requests;
 
-  for (let ind in sent.pending) {
-    let contactReq = sent.pending[i];
+  for (let ind = 0; ind < sent.pending.length; ind ++) {
+    let contactReq = sent.pending[ind];
+    console.log('__SOCKET_LOOP__:', contactReq);
     socket.on(`${contactReq._id}-updateRequest`, request => {
       dispatch(requestActions.updateRequest(request, profile));
     });

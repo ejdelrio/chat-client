@@ -25,8 +25,8 @@ export const profileGet = () => (dispatch, getState) => {
   .set('Authorization', `Bearer ${token}`)
   .then(res => {
     dispatch(createProfile(res.body));
-    dispatch(socketActions.connectSocket(res.body));
     dispatch(requestActions.fetchRequests(res.body.requests, res.body));
+    dispatch(socketActions.connectSocket(res.body));
     return res;
   })
 }

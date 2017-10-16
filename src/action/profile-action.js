@@ -1,6 +1,7 @@
 import superagent from 'superagent';
 import * as socketActions from './socket-action.js';
 import * as requestActions from './request-action.js';
+import * as contactActions from './contact';
 
 
 
@@ -26,6 +27,7 @@ export const profileGet = () => (dispatch, getState) => {
   .then(res => {
     dispatch(createProfile(res.body));
     dispatch(requestActions.fetchRequests(res.body.requests, res.body));
+    dispatch(contactActions.contactFetch(res.body.contacts));
     dispatch(socketActions.connectSocket(res.body));
     return res;
   })

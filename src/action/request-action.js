@@ -38,7 +38,7 @@ export const rejectRequest = request => (dispatch, getState) => {
 export const acceptRequest = request => (dispatch, getState) => {
   let {token, profile} = getState();
 
-  return superagent.put(`${__API_URL__}/api/friendrequest/accept/${request._id}`)
+  return superagent.put(`${__API_URL__}/api/friendrequest/accept/`)
   .set('Authorization', `Bearer ${token}`)
   .send(request)
   .then(res => {

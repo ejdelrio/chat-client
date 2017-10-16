@@ -1,4 +1,4 @@
-const ProfileTrie = modules.export = function() {
+const ProfileTrie = module.exports = function() {
   this.children = {};
 };
 
@@ -32,6 +32,12 @@ ProfileTrie.prototype.loadUser = function(profile) {
 
   return _addUserName(this.children[userName[0]], 1);
 };
+
+ProfileTrie.prototype.clone = function() {
+  let clone = new ProfileTrie();
+  clone.children = this.children;
+  return clone;
+}
 
 ProfileTrie.prototype.searchUsers = function(userName) {
   if (!userName) console.error('User name required.');

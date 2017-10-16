@@ -1,8 +1,13 @@
 import * as requestActions from '../action/request-action.js';
+import * as contactActions from '../action/contact';
 
 
 module.exports = (socket, getState, dispatch) => {
   let {profile, requests} = getState();
+
+  socket.on(`${profile.userName}-newContact`, contact => {
+    dispatch(contactActions.createContact(contact));
+  })
 
   socket.on(`${profile.userName}-newRequest`, request => {
     dispatch(requestActions.createRequest(request, profile));

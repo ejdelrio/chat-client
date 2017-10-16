@@ -5,6 +5,7 @@ import superagent from 'superagent';
 
 import * as SVG from '../svgs';
 import * as requestActions from '../../action/request-action.js';
+import * as util from '../../lib/util.js';
 
 class SearchUser extends React.Component {
   constructor(props) {
@@ -56,11 +57,13 @@ class SearchUser extends React.Component {
             <li key={ind}>
               <div></div>
               <p>{ele.userName}</p>
-              <button
-                onClick={() => this.props.sendRequest(ele)}
-              >
-                +
-              </button>
+              {util.renderIf(!this.props.contacts[ele.userName],
+
+                <button onClick={() => this.props.sendRequest(ele)}>
+                  +
+                </button>
+
+              )}
             </li>
           )
         })}
@@ -70,7 +73,8 @@ class SearchUser extends React.Component {
   }
 }
 let mapStateToProps = state => ({
-  token: state.token
+  token: state.token,
+  contacts: state.contactHash
 })
 
 let mapDispatchToProps = dispatch => ({

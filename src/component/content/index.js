@@ -6,6 +6,7 @@ import Home from '../home';
 import SearchUser from '../search-user';
 import Requests from '../requests';
 import ChatFooter from '../chat-footer';
+import Contacts from '../contacts';
 
 class Content extends React.Component {
   constructor(props) {
@@ -31,6 +32,10 @@ class Content extends React.Component {
       case 'search-user':
         return (
           <SearchUser />
+        );
+      case 'contacts':
+        return(
+          <Contacts />
         );
       default:
         return;

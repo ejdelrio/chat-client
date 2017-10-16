@@ -4,6 +4,8 @@ import profile from './profile.js';
 import socket from './socket.js';
 import requests from './request.js';
 import contactTrie from './contactTrie';
+import contactHash from './contactHash';
+import contacts from './contact';
 
 
 
@@ -12,5 +14,7 @@ module.exports = combineReducers({
   profile,
   socket,
   requests,
-  contactTrie
+  contactTrie,
+  contacts,
+  contactHash
 });

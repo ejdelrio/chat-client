@@ -3,8 +3,7 @@ import superagent from 'superagent';
 export const convoFetch = payload => ({
   type: 'CONVO_FETCH',
   payload
-})
-
+});
 
 export const createConvo = payload => ({
   type: 'CONVO_CREATE',
@@ -28,7 +27,7 @@ export const postConvo = convoPackage => (dispatch, getState) => {
   .set('Authorization', `Bearer ${token}`)
   .send(convoPackage)
   .then(res => {
-    dispatch(createConvo(res.body))
+    dispatch(createConvo(res.body));
     return res;
   });
 };

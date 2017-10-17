@@ -6,6 +6,7 @@ import requests from './request.js';
 import contactTrie from './contactTrie';
 import contactHash from './contactHash';
 import contacts from './contact';
+import requestHash from './sent-request-hash';
 
 
 
@@ -16,5 +17,6 @@ module.exports = combineReducers({
   requests,
   contactTrie,
   contacts,
-  contactHash
+  contactHash,
+  requestHash
 });

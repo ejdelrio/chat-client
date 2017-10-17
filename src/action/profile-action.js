@@ -14,11 +14,11 @@ export const createProfile = profile => ({
 export const updateProfile = profile => ({
   type: 'PROFILE_UPDATE',
   payload: profile
-})
+});
 
 export const deleteProfile = () => ({
   type: 'PROFILE_DELETE'
-})
+});
 
 export const profileGet = () => (dispatch, getState) => {
   let {token} = getState();
@@ -32,5 +32,6 @@ export const profileGet = () => (dispatch, getState) => {
     dispatch(convoActions.convoFetch(res.body.convos));
     dispatch(socketActions.connectSocket(res.body));
     return res;
-  })
-}
+  });
+};
+

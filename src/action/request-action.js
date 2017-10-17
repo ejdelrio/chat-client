@@ -63,3 +63,15 @@ export const sendRequest = request => (dispatch, getState) => {
     return res;
   });
 }
+
+export const removeRequest = request => (dispatch, getState) => {
+  let {token, profile} = getState();
+
+  return superagent.delete(`${__API_URL__}/api/deleterequest`)
+  .set('Authorization', `Bearer ${token}`)
+  .send(request)
+  .then(res => {
+    dispatch(deleteRequest(res.body, profile));
+    return res;
+  })
+}

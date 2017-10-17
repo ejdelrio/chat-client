@@ -38,6 +38,19 @@ module.exports = (state=initState, action) => {
 
       return newState;
 
+    case 'REQUEST_DELETE':
+
+      status = payload.status;
+      reqType = profile.userName === payload.from ? 'sent' : 'received';
+      let reqArray = state[reqType][status].filter(val => val._id !== payload._id);
+      return {
+        ...state,
+        [reqType]: {
+          ...state[reqType],
+          [status]: reqArray
+        }
+      };
+
     default:
 
       return state;

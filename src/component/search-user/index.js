@@ -53,11 +53,16 @@ class SearchUser extends React.Component {
         </div>
         <ul>
         {this.state.queryResults.map((ele, ind) => {
+          let isContact = this.props.contacts[ele.userName];
+          let hasRequest = this.props.requestHash[ele.userName];
+          console.log('HAS_REQUEST', hasRequest);
+          console.log('IS_CONTAcT', isContact);
+
           return(
             <li key={ind}>
               <div></div>
               <p>{ele.userName}</p>
-              {util.renderIf(!this.props.contacts[ele.userName],
+              {util.renderIf(!(isContact || hasRequest),
 
                 <button onClick={() => this.props.sendRequest(ele)}>
                   +
@@ -74,7 +79,8 @@ class SearchUser extends React.Component {
 }
 let mapStateToProps = state => ({
   token: state.token,
-  contacts: state.contactHash
+  contacts: state.contactHash,
+  requestHash: state.requestHash
 })
 
 let mapDispatchToProps = dispatch => ({

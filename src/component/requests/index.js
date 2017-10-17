@@ -118,7 +118,7 @@ let mapStateToProps = state => ({
 let mapDispatchToProps = dispatch => ({
   acceptRequest: request => dispatch(requestActions.acceptRequest(request)),
   rejectRequest: request => dispatch(requestActions.rejectRequest(request)),
-  deleteRequest: request => dispatch(requestActions.deleteRequest(request))
+  deleteRequest: request => dispatch(requestActions.removeRequest(request))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Requests);

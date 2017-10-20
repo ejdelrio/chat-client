@@ -8,6 +8,7 @@ import contactHash from './contactHash';
 import contacts from './contact';
 import requestHash from './sent-request-hash';
 import convos from './convo.js';
+import messages from './messags';
 
 
 
@@ -20,5 +21,6 @@ module.exports = combineReducers({
   contacts,
   contactHash,
   requestHash,
-  convos
+  convos,
+  messages
 });

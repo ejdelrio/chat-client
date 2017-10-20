@@ -38,12 +38,15 @@ class ChatFooter extends React.Component {
 
   render() {
     let {pending} = this.props.requests.received;
+    let unread = this.props.convos.reduce((count, val) => count + val.unread, 0);
     return(
       <section id='chat-footer'>
         <div
           onClick={() => this.renderParent('homeClass', 'home')}
-          className={this.state.homeClass}>
+          className={this.state.homeClass}
+        >
           {SVG.home('')}
+          {util.renderIf(unread, <p>{unread}</p>)}
         </div>
         <div
           onClick={() => this.renderParent('contactsClass', 'contacts')}
@@ -69,7 +72,8 @@ class ChatFooter extends React.Component {
   }
 }
 let mapStateToProps = state => ({
-  requests: state.requests
+  requests: state.requests,
+  convos: state.convos
 })
 
 export default connect(mapStateToProps, undefined)(ChatFooter);

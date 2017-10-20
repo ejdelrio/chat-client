@@ -17,12 +17,26 @@
       outline: 1px solid $second;
     }
 
-    li>p {
-      width: 90%;
+    li>p:first-of-type {
+      width: 75%;
       height: 3vh;
       font-size: 3vh;
       float: left;
+      margin: 2vh 0;
+      margin-left: 5%;
+    }
+
+    li>p:nth-child(2){
+      width: 3vh;
+      float: right;
+      height: 3vh;
+      font-size: 3vh;
       margin: 2vh 5%;
+      border-radius: 100px;
+      color: white;
+      background: red;
+      border: 1px solid white;
+      text-align: center;
     }
   }
 }

@@ -148,13 +148,62 @@
     width: 100%;
     height: 87vh;
     float: left;
-    position: relative;
     background: white;
+
     ul {
       width: 100%;
-      height: 77vh;
       float: left;
+      height: 77vh;
       background: white;
+      overflow: scroll;
+
+
+      li {
+        width: 40%;
+        margin-top: 2vh;
+        clear: both;
+
+        label {
+          font-size: 1.5vh;
+        }
+
+        p {
+          float: left;
+          font-size: 2vh;
+          width: 90%;
+          padding: 2vh 5%;
+          border-radius: 30px;
+          margin-top: 1vh;
+        }
+      }
+      li:last-of-type {
+        margin-bottom: 4vh;
+      }
+
+      .sent-message {
+        float: right;
+        margin-right: 5%;
+
+        p {
+          background: $second;
+        }
+        label {
+          float: right;
+        }
+      }
+
+      .from-message {
+        float: left;
+        margin-left: 5%;
+        p {
+          background: lightblue;
+        }
+
+        label {
+          float: left;
+        }
+
+      }
     }
     &>div {
       width: 100%;

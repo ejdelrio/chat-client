@@ -1,9 +1,13 @@
 import './_message-form.scss';
 import React from 'react';
+import ReactDom from 'react-dom';
 import {connect} from 'react-redux';
 
 import * as util from '../../lib/util';
 import * as convoActions from '../../action/convo-action.js';
+import MessageHeader from './message-header';
+import MessageContent from './message-content';
+import ConvoContent from './convo-content';
 
 class MessageForm extends React.Component {
   constructor (props) {
@@ -81,9 +85,10 @@ class MessageForm extends React.Component {
     })
   }
 
-  submitData(e) {
-    e.preventDefault();
+  submitData(content) {
     let compiledData = this.compileConvo();
+    compiledData.content = content;
+    console.log('CONVO_DATA:', compiledData);
 
     let messageSubmission = compiledData.convoHubID ?
     this.props.postMessage:
@@ -92,91 +97,47 @@ class MessageForm extends React.Component {
 
   }
 
+
   render() {
+
+    let {node} = this.props;
+    let messages
+    if (node) messages = node.messages;
+
     return (
       <section id={'message-form'}>
-        <div>
-          <div>
-            <button
-              onClick={this.props.close}
-            >
-              Cancel
-            </button>
-            <p>Message</p>
-          </div>
-          {util.renderIf(!this.props.existing,
-            <div className={'add-contacts'}>
-              <p>To:</p>
-              <ul>
-                {this.state.members.map((val, ind) => {
-                  return(
-                    <li key={ind}>
-                      <p>{val.userName}
-                        <span
-                          onClick={() => this.removeMember(val)}
-                        >
-                        X
-                      </span>
-                      </p>
-                    </li>
-                  )
-                })}
-              </ul>
-              <input
-                name={'memberSearch'}
-                type={'text'}
-                placeholder={'Search'}
-                value={this.state.memberSearch}
-                onChange={this.trieQuery}
-              />
-            </div>
-          )}
-          {util.renderIf(!this.props.existing,
-            <ul>
-              {this.state.fuzzySearch.map((profile, ind) => {
-                let isNotMember = !this.state.memberHash[profile.userName]
-                if (isNotMember) return(
-                  <li
-                    key={ind}
-                    onClick={() => this.addMember(profile)}
-                  >
-                    <p>{profile.userName}</p>
-                  </li>
-                )
-              })}
-            </ul>
-          )}
-          {util.renderIf(this.props.existing,
-            <section>
-              <p></p>
-            </section>
-          )}
-        </div>
+        <MessageHeader
+          close={this.props.close}
+          existing={this.props.existing}
+          members={this.state.members}
+          removeMember={this.removeMember}
+          memberSearch={this.state.memberSearch}
+          trieQuery={this.trieQuery}
+          addMember={this.addMember}
+          memberHash={this.state.memberHash}
+          fuzzySearch={this.state.fuzzySearch}
+          profile={this.props.profile}
+        />
         <section>
-          <ul>
-
-          </ul>
-          <div>
-            <form onSubmit={this.submitData}>
-              <input
-                name={'content'}
-                type={'text'}
-                placeholder={'Message'}
-                value={this.state.content}
-                onChange={this.onChange}
-              />
-              <button type={'submit'}>➜</button>
-            </form>
-          </div>
+          <ConvoContent
+            profile={this.props.profile}
+            messages={this.props.messages}
+            node={this.props.node}
+          />
+          <MessageContent
+            submitData={this.submitData}
+          />
         </section>
       </section>
     )
   }
 }
 
+
 let mapStateToProps = state => ({
   contactTrie: state.contactTrie,
-  profile: state.profile
+  profile: state.profile,
+  messages: state.messages
 })
 
 let mapDispatchToProps = dispatch => ({

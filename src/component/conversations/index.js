@@ -2,6 +2,8 @@ import './_conversations.scss';
 import React from 'react';
 import {connect} from 'react-redux';
 
+import * as util from '../../lib/util.js';
+
 class Conversations extends React.Component {
   constructor (props) {
     super(props);
@@ -25,6 +27,7 @@ class Conversations extends React.Component {
                     return str;
                   }, '')}
                 </p>
+                {util.renderIf(node.unread, <p>{node.unread}</p>)}
               </li>
             )
           })}

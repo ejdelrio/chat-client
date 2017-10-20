@@ -40,8 +40,8 @@ class Content extends React.Component {
     this.setState({
       messageMembers: [],
       renderMessageForm: false,
-      existingConvo: null,
-      messageNode: null
+      existingConvo: undefined,
+      messageNode: undefined
     })
   }
 

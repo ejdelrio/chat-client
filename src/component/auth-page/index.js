@@ -67,7 +67,11 @@ class AuthPage extends React.Component {
     return(
       <section id='auth-page'>
         {util.renderIf(this.state.stateError,
-          <Modal close={this.errorModalToggle}>
+          <Modal
+            close={this.errorModalToggle}
+            className={'auth-modal'}
+            buttonText={'Close'}
+          >
             <p id='auth-error'>{this.state.errorMessage}</p>
           </Modal>
         )}

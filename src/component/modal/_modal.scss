@@ -8,26 +8,17 @@
   z-index: 999999;
   background: rgba(0, 0, 0, 0.6);
 
-  &>section {
-    float: left;
-    width: 80%;
-    min-height: 30vh;
-    height: auto;
-    margin: 20vh 10%;
-    background: $primary;
-    border-radius: 5px;
-    animation-name: authFadeIn;
-    animation-duration: .35s;
-    position: relative;
-    &> button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      border: none;
-      background: none;
-      font-size: 5vw;
-      margin: 2vh 2.5%;
-      cursor: pointer;
-    }
+  &> section > button {
+    position: absolute;
+    width: 90%;
+    margin-left: 5%;
+    bottom: 5%;
+    border: none;
+    border-radius: 20px;
+    background: #e2ecee;
+    color: #ff5549;
+    height: 7vh;
+    font-size: 5vw;
+    cursor: pointer;
   }
 }

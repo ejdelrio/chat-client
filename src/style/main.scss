@@ -38,6 +38,16 @@ body {
   }
 }
 
+@keyframes modalSlideUp {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 5%;
+  }
+
+}
+
 @keyframes slideDown {
   0% {
     bottom: 0%;

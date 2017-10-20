@@ -34,7 +34,7 @@ class HeaderBar extends React.Component {
             onChange={this.onChange}
           />
         </section>
-        {SVG.compose('new-message')}
+        {SVG.compose('new-message', this.props.compose)}
       </section>
     )
   }

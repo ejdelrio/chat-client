@@ -1,0 +1,197 @@
+@import '../../style/lib/vars';
+
+#message-form {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  bottom: 0;
+  z-index: 9999999;
+  animation-name: slideUp;
+  animation-duration: 0.5s;
+
+  &>div {
+    width: 100%;
+    height: 16vh;
+    float: left;
+    position: relative;
+    overflow: visible;
+    z-index: 99999999999;
+    &>section {
+      width: 100%;
+      height: 8vh;
+      float: left;
+      background: $white;
+      outline: 1px solid $primary;
+      p {
+        float: left;
+        width: 90%;
+        height: 3vh;
+        font-size: 3vh;
+        font-family: $font;
+        margin: 2.5vh 5%;
+      }
+    }
+
+
+    &>div:first-child {
+      width: 100%;
+      height: 8vh;
+      background: $primary;
+      float: left;
+
+      &>button {
+        float: left;
+        height: 8vh;
+        width: 20%;
+        font-size: 2.5vh;
+        color: $white;
+        font-family: $font;
+        background: none;
+        outline: none;
+      }
+
+      &>p {
+        width: 60%;
+        height: 3vh;
+        font-size: 3vh;
+        padding: 2.5vh 0;
+        text-align: center;
+        color: $white;
+        font-family: $font;
+        float: left;
+      }
+    }
+
+    &>.add-contacts {
+      width: 100%;
+      background: $white;
+      height: 8vh;
+      float: left;
+      outline: 1px solid $second;
+
+      &> input {
+        min-width: 100%;
+        height: 2vh;
+        padding: 1vh 2.5%;
+        font-size: 2vh;
+        float: left;
+        background: $white;
+        outline: none;
+      }
+
+      &>ul {
+        height: 4vh;
+        width: 90%;
+        float: left;
+
+        li {
+          display: inline-block;
+          float: left;
+          margin: 0.5vh 1%;
+          height: 2vh;
+          background: $second;
+          border: 1px solid $primary;
+          border-radius: 10px;
+          padding: 0.5vh 2.5%;
+          width: auto;
+
+          p {
+            font-size: 2vh;
+            height: 2vh;
+            text-align: center;
+            span {
+              margin-left: 20%;
+            }
+          }
+
+        }
+
+      }
+
+      &>p {
+        float: left;
+        width: 5%;
+        height: 2vh;
+        font-size: 2vh;
+        padding: 1vh;
+        text-align: center;
+      }
+    }
+
+    &>ul {
+      width: 100%;
+      height: auto;
+      overflow-y: scroll;
+      top: -100;
+      background: green;
+      float: left;
+      z-index: 999999;
+
+      li {
+        height: 7vh;
+        width: 100%;
+        background: $white;
+        outline: $second;
+        float: left;
+
+        p {
+          width: 90%;
+          height: 3vh;
+          font-size: 3vh;
+          margin: 2vh 5%;
+        }
+      }
+    }
+  }
+
+  &>section {
+    width: 100%;
+    height: 87vh;
+    float: left;
+    position: relative;
+    background: white;
+    ul {
+      width: 100%;
+      height: 77vh;
+      float: left;
+      background: white;
+    }
+    &>div {
+      width: 100%;
+      height: 7vh;
+      float: left;
+      background: $primary;
+      outline: 1px solid $second;
+
+      &>form {
+        width: 80%;
+        float: left;
+        height: 4vh;
+        padding: 0.5vh 2.5%;
+        margin: 1vh 7.5%;
+        font-size: 3vh;
+        border-radius: 50px;
+        background: $white;
+
+        input {
+          float: left;
+          width: 80%;
+          height: 2vh;
+          margin: 1vh 0;
+          font-size: 2vh;
+          outline: none;
+          color: $black;
+        }
+        button {
+          float: right;
+          height: 4vh;
+          width: 4vh;
+          background: $primary;
+          color: $white;
+          font-size: 3vh;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}

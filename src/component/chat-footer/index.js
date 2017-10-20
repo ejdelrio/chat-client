@@ -9,7 +9,7 @@ class ChatFooter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      homeClass: '',
+      homeClass: 'highlight-icon',
       contactsClass: '',
       requestsClass: '',
       lookupClass: ''

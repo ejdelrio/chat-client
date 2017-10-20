@@ -1,9 +1,10 @@
 import React from 'react';
 const SVG = module.exports = {};
 
-SVG.compose = className => {
+SVG.compose = (className, click) => {
   return(
     <svg
+      onClick={() => click()}
       version="1.1"
       viewBox="0 0 1000 1000"
       enableBackground="new 0 0 1000 1000"

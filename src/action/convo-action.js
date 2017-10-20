@@ -43,3 +43,14 @@ export const postMessage = message => (dispatch, getState) => {
     return res;
   });
 };
+
+export const readConvo = node => (dispatch, getState) => {
+  let {token} = getState();
+
+  return superagent.put(`${__API_URL__}/api/read-convo/${node._id}`)
+  .set('Authorization', `Bearer ${token}`)
+  .then(res => {
+    dispatch(upDateConvo(res.body));
+    return res;
+  })
+}

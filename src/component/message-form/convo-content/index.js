@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import {connect} from 'react-redux';
+
+import * as convoActions from '../../../action/convo-action';
 
 function renderMessages(messages, profile) {
   if(!messages) return;
@@ -22,9 +25,16 @@ function renderMessages(messages, profile) {
 class ConvoContent extends React.Component {
 
   componentDidMount(){
-    let node = ReactDom.findDOMNode(this);
-    console.log(node.scrollTop, node.scrollHeight);
-    node.scrollTop = node.scrollHeight;
+    let reactNode = ReactDom.findDOMNode(this);
+    console.log(reactNode.scrollTop, reactNode.scrollHeight);
+    reactNode.scrollTop = reactNode.scrollHeight;
+
+
+    let {node} = this.props;
+    if(node && node.unread > 0) {
+      this.props.markRead(node)
+
+    }
   }
 
   componentDidUpdate() {
@@ -45,4 +55,8 @@ class ConvoContent extends React.Component {
   }
 }
 
-export default ConvoContent;
+let mapDispathToProps = dispatch => ({
+  markRead: node => dispatch(convoActions.readConvo(node))
+})
+
+export default connect(undefined, mapDispathToProps)(ConvoContent);

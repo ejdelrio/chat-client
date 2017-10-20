@@ -1,0 +1,28 @@
+@import '../../style/lib/vars';
+
+#conversations {
+  width: 100%;
+  height: 80vh;
+  background: white;
+  margin-top: 10vh;
+  float: left;
+
+  ul {
+    float: left;
+    width: 100%;
+    li {
+      width: 100%;
+      height: 7vh;
+      background: $white;
+      outline: 1px solid $second;
+    }
+
+    li>p {
+      width: 90%;
+      height: 3vh;
+      font-size: 3vh;
+      float: left;
+      margin: 2vh 5%;
+    }
+  }
+}

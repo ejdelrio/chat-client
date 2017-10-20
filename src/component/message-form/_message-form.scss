@@ -178,6 +178,8 @@
       }
       li:last-of-type {
         margin-bottom: 4vh;
+        animation-name: authFadeIn;
+        animation-duration: 1s;
       }
 
       .sent-message {

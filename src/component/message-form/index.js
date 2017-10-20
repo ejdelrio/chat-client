@@ -1,9 +1,8 @@
 import './_message-form.scss';
 import React from 'react';
-import ReactDom from 'react-dom';
 import {connect} from 'react-redux';
 
-import * as util from '../../lib/util';
+
 import * as convoActions from '../../action/convo-action.js';
 import MessageHeader from './message-header';
 import MessageContent from './message-content';

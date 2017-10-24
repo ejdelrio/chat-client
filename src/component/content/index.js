@@ -88,6 +88,7 @@ class Content extends React.Component {
             members={this.state.messageMembers}
             existing={this.state.existingConvo}
             node={this.state.messageNode}
+            openNewConvo={this.sendToSingleMember}
           />
         )}
         {this.componentSwitch(this.state.currentView)}

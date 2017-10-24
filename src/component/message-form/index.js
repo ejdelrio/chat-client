@@ -174,13 +174,21 @@ class MessageForm extends React.Component {
   }
 
   submitData(content) {
+
     let compiledData = this.compileConvo();
     compiledData.content = content;
 
     let messageSubmission = compiledData.convoHubID ?
     this.props.postMessage:
     this.props.newConvo;
-    messageSubmission(compiledData);
+    messageSubmission(compiledData)
+    .then(node => {
+      if(!compiledData.convoHubID) {
+        this.props.close();
+        this.props.openNewConvo(node.members, true, node);
+      }
+    })
+
 
   }
 
@@ -210,7 +218,6 @@ class MessageForm extends React.Component {
             seeTyping={this.state.seeTyping}
           />
           <MessageContent
-            close={this.props.close}
             submitData={this.submitData}
             showTyping={this.showTyping}
           />

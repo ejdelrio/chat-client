@@ -27,7 +27,7 @@ export const postConvo = convoPackage => (dispatch, getState) => {
   .set('Authorization', `Bearer ${token}`)
   .send(convoPackage)
   .then(res => {
-    return res;
+    return res.body;
   });
 };
 
@@ -39,7 +39,7 @@ export const postMessage = message => (dispatch, getState) => {
   .send(message)
   .then(res => {
     dispatch(upDateConvo(res.body));
-    return res;
+    return res.body;
   });
 };
 

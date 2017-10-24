@@ -8,7 +8,7 @@ module.exports = (socket, getState, dispatch) => {
 
   socket.on(`${profile.userName}-newContact`, contact => {
     dispatch(contactActions.createContact(contact));
-  })
+  });
 
   socket.on(`${profile.userName}-newRequest`, request => {
     dispatch(requestActions.createRequest(request, profile));
@@ -24,7 +24,7 @@ module.exports = (socket, getState, dispatch) => {
   });
 
 
-  let {sent, received} = requests;
+  let {sent} = requests;
 
   for (let ind = 0; ind < sent.pending.length; ind ++) {
     let contactReq = sent.pending[ind];
@@ -39,11 +39,11 @@ module.exports = (socket, getState, dispatch) => {
     socket.on(`${node._id}-nodeUpdate`, node => {
       dispatch(convoActions.upDateConvo(node));
     })
-  })
+  });
 
 
 
 
 
   return socket;
-}
+};

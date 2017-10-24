@@ -14,6 +14,15 @@ module.exports = (socket, getState, dispatch) => {
     dispatch(requestActions.createRequest(request, profile));
   });
 
+  socket.on(`${profile._id}-newNode`, node => {
+
+    socket.on(`${node._id}-nodeUpdate`, node => {
+      dispatch(convoActions.upDateConvo(node));
+    });
+
+    dispatch(convoActions.createConvo(node));
+  });
+
 
   let {sent, received} = requests;
 
@@ -28,7 +37,6 @@ module.exports = (socket, getState, dispatch) => {
   convos.forEach(node => {
 
     socket.on(`${node._id}-nodeUpdate`, node => {
-      console.log('UPDATED_NODE: ', node);
       dispatch(convoActions.upDateConvo(node));
     })
   })

@@ -19,13 +19,13 @@ class Conversations extends React.Component {
                 key={ind}
                 onClick={() => this.props.nodeClick(node.members, true, node)}
               >
-                <p>{
-                  node.members.reduce((str, val, ind, arr) => {
-                    if(val.userName === this.props.profile.userName) return str;
-                    str += val.userName;
-                    if(arr[ind + 1]) str += ', ';
-                    return str;
-                  }, '')}
+                <p>
+                  {
+                    node.members.reduce ((newArr, val) => {
+                      if (val.userName !== this.props.profile.userName) newArr.push (val.userName);
+                      return newArr
+                    }, []).join (', ')
+                  }
                 </p>
                 {util.renderIf(node.unread, <p>{node.unread}</p>)}
               </li>

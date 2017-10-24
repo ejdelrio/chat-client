@@ -35,8 +35,6 @@ class Requests extends React.Component {
   render() {
     let {sent, received} = this.props.requests;
     let modalStatus = this.state.acceptRequest ? 'acceptRequest' : 'deleteRequest';
-    console.log(this.props.profile.requests);
-
 
     let sentRequestOptions = (
       <div>

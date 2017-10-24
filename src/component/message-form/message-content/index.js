@@ -10,19 +10,17 @@ class MessageContent extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  componentDidUpdate() {
-    console.log(this.state);
-  }
-
   onSubmit(e) {
     e.preventDefault();
     this.props.submitData(this.state.content);
+
     this.setState({
       content: ''
     })
   }
   onChange(e) {
     let {name, value} = e.target;
+
     this.setState({
       [name]: value
     })

@@ -27,7 +27,6 @@ export const postConvo = convoPackage => (dispatch, getState) => {
   .set('Authorization', `Bearer ${token}`)
   .send(convoPackage)
   .then(res => {
-    dispatch(createConvo(res.body));
     return res;
   });
 };

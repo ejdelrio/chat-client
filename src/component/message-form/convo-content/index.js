@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import superagent from 'superagent';
 
 import * as convoActions from '../../../action/convo-action';
+import * as util from '../../../lib/util';
 
 function renderMessages(messages, profile) {
   if(!messages) return;
@@ -45,27 +46,44 @@ class ConvoContent extends React.Component {
   }
   componentDidUpdate(){
     let reactNode = ReactDom.findDOMNode(this);
-    console.log(reactNode.scrollTop, reactNode.scrollHeight);
     reactNode.scrollTop = reactNode.scrollHeight;
 
   }
 
 
   render() {
+    let {socket, node} = this.props;
     let content, _id;
-    if (this.props.node) _id = this.props.node._id;
+
+    if (node) {
+      _id = node._id;
+
+    }
     if(_id) content = this.props.messages[_id];
+
+
+
 
     return(
       <ul>
         {renderMessages(content, this.props.profile)}
+        {util.renderIf(this.props.seeTyping,
+          <li id={'see-typing'}>
+            <div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </li>
+        )}
       </ul>
     )
   }
 }
 
 let mapStateToProps = state => ({
-  token: state.token
+  token: state.token,
+  socket: state.socket
 })
 
 let mapDispathToProps = dispatch => ({

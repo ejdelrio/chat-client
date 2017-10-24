@@ -60,7 +60,15 @@ class MessageHeader extends React.Component {
         )}
         {util.renderIf(this.props.existing,
           <section>
-            <p></p>
+            <p>
+              {
+                this.props.members.reduce((newArr, val) => {
+                  if(val.userName !== this.props.profile.userName) newArr.push(val.userName);
+                  return newArr
+                }, [])
+                .join(', ')
+              }
+            </p>
           </section>
         )}
       </div>

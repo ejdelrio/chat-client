@@ -31,7 +31,7 @@ export const signup = user => dispatch => {
   .then(res => {
     util.createCookie('pingme-token', res.text, 1);
     dispatch(tokenSet(JSON.parse(res.text)));
-    dispatch(profileActions.getProfile())
+    dispatch(profileActions.profileGet())
     return res;
   })
-}
+};

@@ -159,7 +159,7 @@
 
 
       li {
-        width: 40%;
+        width: 50%;
         margin-top: 2vh;
         clear: both;
 
@@ -168,12 +168,15 @@
         }
 
         p {
-          float: left;
           font-size: 2vh;
-          width: 90%;
+          width: auto;
+          max-width: 90%;
+          min-width: 5%;
           padding: 2vh 5%;
           border-radius: 30px;
           margin-top: 1vh;
+          word-break: break-all;
+          clear: both;
         }
       }
       li:last-of-type {
@@ -184,10 +187,11 @@
 
       .sent-message {
         float: right;
-        margin-right: 5%;
+        margin-right: 2.5%;
 
         p {
           background: $second;
+          float: right;
         }
         label {
           float: right;
@@ -196,9 +200,10 @@
 
       .from-message {
         float: left;
-        margin-left: 5%;
+        margin-left: 2.5%;
         p {
           background: lightblue;
+          float: left;
         }
 
         label {
@@ -232,6 +237,7 @@
           font-size: 2vh;
           outline: none;
           color: $black;
+          background: none;
         }
         button {
           float: right;

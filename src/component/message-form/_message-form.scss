@@ -190,7 +190,7 @@
         float: left;
       }
       #see-typing>div {
-        width: 8vh;
+        width: 6vh;
         padding: 0 1vh;
         height: 5vh;
         margin-left: 2.5%;
@@ -199,8 +199,8 @@
 
         @for $i from 1 through 4 {
           &>div:nth-child(#{$i}) {
-            height: 2vh;
-            width: 2vh;
+            height: 1.5vh;
+            width: 1.5vh;
             float: left;
             border-radius: 100px;
             margin: 1.5vh .25vh;

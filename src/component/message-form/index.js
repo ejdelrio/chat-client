@@ -50,7 +50,6 @@ class MessageForm extends React.Component {
       memberSearch: '',
       content: '',
       fuzzySearch: [],
-      isTyping: false,
       seeTyping: false,
       node: !this.props.node ? preExistingNode : this.props.node,
       existing
@@ -65,7 +64,6 @@ class MessageForm extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state);
     let {socket, profile} = this.props;
     let {node} = this.state;
     let id;
@@ -77,21 +75,10 @@ class MessageForm extends React.Component {
       !socket.hasListeners(`showTyping-${id}`) ?
 
       socket.on(`showTyping-${id}`, data => {
-        console.log('firing');
-        if(!node) return;
-        let {userName, convoNode} = data;
-        let timer = 5;
-        let sentFromMe = profile.userName === userName;
+        let {convoNode, seeTyping, userName} = data;
 
-        if(!this.state.seeTyping && !sentFromMe) {
-          this.setState({seeTyping: true})
-          let countDown = setInterval (() => {
-            if (timer > 0) timer -= 1;
-            if (timer === 0) {
-              this.setState ({seeTyping: false});
-              clearInterval (countDown)
-            }
-          }, 1000);
+        if(profile.userName !== userName && convoNode.convoHubID === node.convoHubID) {
+          this.setState({seeTyping})
         }
       }):
 
@@ -173,29 +160,11 @@ class MessageForm extends React.Component {
   }
 
   sendTyping() {
-    let {isTyping, seeTyping, typingTimer, node} = this.state;
+    let {node} = this.state;
     let {socket, profile} = this.props;
-    let timer = 2;
-    let scope = this;
 
 
-
-    if(!isTyping) {
-      this.setState({isTyping: true});
-      let countDown = setInterval(() => {
-
-        if (timer > 0) timer -= 1;
-        if (timer === 0) {
-          scope.setState({isTyping: false});
-          clearInterval(countDown)
-        }
-      }, 1000);
-      socket.emit('sendTyping', {convoNode: node, userName: profile.userName});
-    }
-
-
-
-
+    socket.emit('sendTyping', {convoNode: node, userName: profile.userName});
   }
 
   submitData() {
@@ -217,6 +186,7 @@ class MessageForm extends React.Component {
       }
     })
     .then(this.setState({content: ''}))
+    .then(this.props.socket.emit('clearTimer'))
   }
 
 

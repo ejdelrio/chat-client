@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96bba6c0-3bc1-4915-9af4-e19856604c33" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/contacts/_contacts.scss" afterPath="$PROJECT_DIR$/src/component/contacts/_contacts.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/header-bar/_header-bar.scss" afterPath="$PROJECT_DIR$/src/component/header-bar/_header-bar.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/requests/_requests.scss" afterPath="$PROJECT_DIR$/src/component/requests/_requests.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/search-user/_search-user.scss" afterPath="$PROJECT_DIR$/src/component/search-user/_search-user.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,16 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/svgs/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/modal/index.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -60,11 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_contacts.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_contacts.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/contacts/_contacts.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -180,13 +176,13 @@
         <option value="$PROJECT_DIR$/src/component/auth-form/_auth-form.scss" />
         <option value="$PROJECT_DIR$/src/component/modal/_modal.scss" />
         <option value="$PROJECT_DIR$/src/component/auth-page/_auth-page.scss" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/style/main.scss" />
         <option value="$PROJECT_DIR$/src/component/header-bar/_header-bar.scss" />
         <option value="$PROJECT_DIR$/src/component/requests/_requests.scss" />
         <option value="$PROJECT_DIR$/src/component/search-user/_search-user.scss" />
         <option value="$PROJECT_DIR$/src/component/contacts/_contacts.scss" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -294,12 +290,12 @@
       <workItem from="1508376585715" duration="40861000" />
       <workItem from="1508610215940" duration="14095000" />
       <workItem from="1508732620168" duration="2890000" />
-      <workItem from="1508817899120" duration="30871000" />
+      <workItem from="1508817899120" duration="30973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120358000" />
+    <option name="totallyTimeSpent" value="120460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -702,14 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -796,6 +784,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="37" />
           <folding />
         </state>
       </provider>

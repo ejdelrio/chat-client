@@ -1,3 +1,6 @@
+import tone from './sms-tone.mp3';
+let notification = new Audio(tone);
+
 let initState = {
   sent: {
     pending: [],
@@ -25,6 +28,7 @@ module.exports = (state=initState, action) => {
       let status = profile.userName === payload.from ? 'sent' : 'received';
       let newStateObj = {...state[status]};
       newStateObj[payload.status].push(payload);
+      if(profile.userName !== payload.from) notification.play();
       return {...state, [status]: newStateObj};
 
     case 'REQUEST_UPDATE':

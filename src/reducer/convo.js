@@ -1,3 +1,6 @@
+import sound from './ring.mp3';
+let notification = new Audio(sound);
+
 module.exports = (state=[], action) => {
   let {type, payload} = action;
 
@@ -10,8 +13,11 @@ module.exports = (state=[], action) => {
 
       return [...state, payload];
 
-    case 'CONVO_UPDATE':
+    case 'CONVO_READ':
+      return state.map(val => { return val._id === payload._id ? payload: val});
 
+    case 'CONVO_UPDATE':
+      notificatoin.play();
       return state.map(val => { return val._id === payload._id ? payload: val});
 
     case 'CONVO_DELETE':

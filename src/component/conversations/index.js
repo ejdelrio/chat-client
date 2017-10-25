@@ -1,6 +1,5 @@
 import './_conversations.scss';
 import React from 'react';
-const sound = require('./ring.mp3');
 import {connect} from 'react-redux';
 
 import * as util from '../../lib/util.js';
@@ -10,10 +9,7 @@ class Conversations extends React.Component {
     super(props);
   }
 
-  componentDidUpdate() {
-    let audio = new Audio(sound);
-    audio.play();
-  }
+
 
   render() {
     return(

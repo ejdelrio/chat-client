@@ -17,7 +17,7 @@ module.exports = (state=[], action) => {
       return state.map(val => { return val._id === payload._id ? payload: val});
 
     case 'CONVO_UPDATE':
-      notificatoin.play();
+      notification.play();
       return state.map(val => { return val._id === payload._id ? payload: val});
 
     case 'CONVO_DELETE':

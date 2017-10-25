@@ -1,10 +1,16 @@
 @import './base/reset';
 @import './lib/vars';
 
+
+html {
+  width: 100%;
+  overflow: hidden;
+}
 body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  position: fixed;
 }
 
 #root {

@@ -21,6 +21,8 @@ class AuthForm extends React.Component {
   onChange(e) {
     let { name, value } = e.target;
 
+    if(name !== 'passWord' || name !== 'passwordConfirm') value = value.toLocaleLowerCase();
+
     this.setState({
       [name]: value,
     })

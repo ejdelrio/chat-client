@@ -46,7 +46,7 @@ class AuthForm extends React.Component {
     let emailInput = (
       <input
         name='email'
-        type='text'
+        type='email'
         placeholder='Enter a valid email address'
         value={this.state.email}
         onChange={this.onChange}
@@ -55,7 +55,7 @@ class AuthForm extends React.Component {
     let emailConfirm = (
       <input
         name='emailConfirm'
-        type='text'
+        type='email'
         placeholder='Confirm email address'
         value={this.state.emailConfirm}
         onChange={this.onChange}

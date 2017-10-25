@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="96bba6c0-3bc1-4915-9af4-e19856604c33" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/style/main.scss" afterPath="$PROJECT_DIR$/src/style/main.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -94,8 +92,8 @@
       <file leaf-file-name="main.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/style/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="68">
+              <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -229,70 +227,6 @@
               <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="chat-client" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="auth-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="conversations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="modal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="svgs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -340,12 +274,12 @@
       <workItem from="1508376585715" duration="40861000" />
       <workItem from="1508610215940" duration="14095000" />
       <workItem from="1508732620168" duration="2890000" />
-      <workItem from="1508817899120" duration="30057000" />
+      <workItem from="1508817899120" duration="30128000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119544000" />
+    <option name="totallyTimeSpent" value="119615000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -835,8 +769,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="68">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
           <folding />
         </state>
       </provider>

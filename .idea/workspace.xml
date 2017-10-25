@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96bba6c0-3bc1-4915-9af4-e19856604c33" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/component/conversations/ring.mp3" afterPath="$PROJECT_DIR$/src/reducer/ring.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/action/convo-action.js" afterPath="$PROJECT_DIR$/src/action/convo-action.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/conversations/index.js" afterPath="$PROJECT_DIR$/src/component/conversations/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducer/convo.js" afterPath="$PROJECT_DIR$/src/reducer/convo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducer/request.js" afterPath="$PROJECT_DIR$/src/reducer/request.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,12 +42,12 @@
       <file leaf-file-name="convo-action.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/action/convo-action.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+            <state relative-caret-position="84">
+              <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
               <folding>
                 <element signature="e#235#272#0" expanded="true" />
-                <element signature="e#313#348#0" expanded="true" />
-                <element signature="e#391#428#0" expanded="true" />
+                <element signature="e#317#352#0" expanded="true" />
+                <element signature="e#395#432#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -347,12 +342,12 @@
       <workItem from="1508376585715" duration="40861000" />
       <workItem from="1508610215940" duration="14095000" />
       <workItem from="1508732620168" duration="2890000" />
-      <workItem from="1508817899120" duration="33653000" />
+      <workItem from="1508817899120" duration="33891000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123140000" />
+    <option name="totallyTimeSpent" value="123378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -858,12 +853,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/action/convo-action.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="53" column="24" lean-forward="false" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+        <state relative-caret-position="84">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
           <folding>
             <element signature="e#235#272#0" expanded="true" />
-            <element signature="e#313#348#0" expanded="true" />
-            <element signature="e#391#428#0" expanded="true" />
+            <element signature="e#317#352#0" expanded="true" />
+            <element signature="e#395#432#0" expanded="true" />
           </folding>
         </state>
       </provider>

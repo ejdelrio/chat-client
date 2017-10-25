@@ -15,7 +15,7 @@ export const upDateConvo = payload => ({
   payload
 });
 
-export const readConvo = payload => ({
+export const readThisConvo = payload => ({
   type: 'CONVO_READ',
   payload
 });
@@ -54,7 +54,7 @@ export const readConvo = node => (dispatch, getState) => {
   return superagent.put(`${__API_URL__}/api/read-convo/${node._id}`)
   .set('Authorization', `Bearer ${token}`)
   .then(res => {
-    dispatch(readConvo(res.body));
+    dispatch(readThisConvo(res.body));
     return res;
   })
 }

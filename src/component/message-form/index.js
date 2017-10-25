@@ -8,17 +8,7 @@ import MessageHeader from './message-header';
 import MessageContent from './message-content';
 import ConvoContent from './convo-content';
 
-var timer = 0;
 
-function timeDelay(ms){
-  var start = new Date().getTime();
-  var end = start;
-  while(end < start + ms) {
-    end = new Date().getTime();
-  }
-  timer += 1;
-  console.log(timer);
-}
 
 function checkForExistingConvo(memberHash, membersArr, convos) {
 
@@ -63,7 +53,6 @@ class MessageForm extends React.Component {
       fuzzySearch: [],
       isTyping: false,
       seeTyping: false,
-      typingTimer: 0,
       node: preExistingNode ? preExistingNode : this.props.node,
       existing
     };
@@ -73,8 +62,42 @@ class MessageForm extends React.Component {
     this.removeMember = this.removeMember.bind(this);
     this.compileConvo = this.compileConvo.bind(this);
     this.submitData = this.submitData.bind(this);
-    this.showTyping = this.showTyping.bind(this);
+    this.sendTyping = this.sendTyping.bind(this);
   }
+
+  componentDidMount() {
+    let {socket, profile} = this.props;
+    let {node} = this.state;
+    let id;
+
+    if(node) id = node.convoHubID;
+    socket.removeListener('showTyping*')
+
+    if(id)
+      !socket.hasListeners(`showTyping-${id}`) ?
+
+      socket.on(`showTyping-${id}`, data => {
+        console.log('firing');
+        if(!node) return;
+        let {userName, convoNode} = data;
+        let timer = 5;
+        let sentFromMe = profile.userName === userName;
+
+        if(!this.state.seeTyping && !sentFromMe) {
+          this.setState({seeTyping: true})
+          let countDown = setInterval (() => {
+            if (timer > 0) timer -= 1;
+            if (timer === 0) {
+              this.setState ({seeTyping: false});
+              clearInterval (countDown)
+            }
+          }, 1000);
+        }
+      }):
+
+      null;
+  }
+
 
   compileConvo() {
     let convoData = {...this.state};
@@ -92,6 +115,7 @@ class MessageForm extends React.Component {
     this.setState({
       [name]: value
     });
+    this.sendTyping();
   }
 
   removeMember(userProfile) {
@@ -147,36 +171,35 @@ class MessageForm extends React.Component {
     })
   }
 
-  showTyping() {
+  sendTyping() {
     let {isTyping, seeTyping, typingTimer, node} = this.state;
     let {socket, profile} = this.props;
-    timer = 0;
+    let timer = 2;
+    let scope = this;
 
-    if(!isTyping && node) {
 
-      this.setState({
-        isTyping: true
-      });
 
-      socket.emit(`showTyping`, {hubID: node.convoHubID, userName: profile.userName})
+    if(!isTyping) {
+      this.setState({isTyping: true});
+      let countDown = setInterval(() => {
 
-      while(timer !== 3) {
-        timeDelay(1000);
-      }
-
-      this.setState({
-        isTyping: false
-      })
-
+        if (timer > 0) timer -= 1;
+        if (timer === 0) {
+          scope.setState({isTyping: false});
+          clearInterval(countDown)
+        }
+      }, 1000);
+      socket.emit('sendTyping', {convoNode: node, userName: profile.userName});
     }
+
+
 
 
   }
 
-  submitData(content) {
+  submitData() {
 
     let compiledData = this.compileConvo();
-    compiledData.content = content;
 
     let messageSubmission = compiledData.convoHubID ?
     this.props.postMessage:
@@ -188,14 +211,12 @@ class MessageForm extends React.Component {
         this.props.openNewConvo(node.members, true, node);
       }
     })
-
-
+    .then(this.setState({content: ''}))
   }
 
 
 
   render() {
-
     return (
       <section id={'message-form'}>
         <MessageHeader
@@ -220,6 +241,8 @@ class MessageForm extends React.Component {
           <MessageContent
             submitData={this.submitData}
             showTyping={this.showTyping}
+            onChange={this.onChange}
+            content={this.state.content}
           />
         </section>
       </section>
@@ -234,7 +257,7 @@ let mapStateToProps = state => ({
   messages: state.messages,
   socket: state.socket,
   convos: state.convos
-})
+});
 
 let mapDispatchToProps = dispatch => ({
   postMessage: convoData => dispatch(convoActions.postMessage(convoData)),

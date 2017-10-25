@@ -3,26 +3,16 @@ import React from 'react'
 class MessageContent extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {
-      content: ''
-    }
-    this.onChange = this.onChange.bind(this);
+
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.submitData(this.state.content);
+    this.props.submitData();
 
     this.setState({
       content: ''
-    })
-  }
-  onChange(e) {
-    let {name, value} = e.target;
-
-    this.setState({
-      [name]: value
     })
   }
 
@@ -34,8 +24,8 @@ class MessageContent extends React.Component {
             name={'content'}
             type={'text'}
             placeholder={'Message'}
-            value={this.state.content}
-            onChange={this.onChange}
+            value={this.props.content}
+            onChange={this.props.onChange}
           />
           <button type={'submit'}>➜</button>
         </form>

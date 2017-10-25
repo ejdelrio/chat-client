@@ -162,6 +162,8 @@
         width: 50%;
         margin-top: 2vh;
         clear: both;
+        animation-name: authFadeIn;
+        animation-duration: 0.5s;
 
         label {
           font-size: 1.5vh;
@@ -181,8 +183,35 @@
       }
       li:last-of-type {
         margin-bottom: 4vh;
-        animation-name: authFadeIn;
-        animation-duration: 1s;
+      }
+
+      #see-typing {
+        width: 50%;
+        float: left;
+      }
+      #see-typing>div {
+        width: 8vh;
+        padding: 0 1vh;
+        height: 5vh;
+        margin-left: 2.5%;
+        background: #eaebe7;
+        border-radius: 20px;
+
+        @for $i from 1 through 4 {
+          &>div:nth-child(#{$i}) {
+            height: 2vh;
+            width: 2vh;
+            float: left;
+            border-radius: 100px;
+            margin: 1.5vh .25vh;
+            background: #a8a8a8;
+            animation-name: bobUp;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-delay: ($i - 1) * .3s;
+          }
+        }
+
       }
 
       .sent-message {
@@ -251,4 +280,19 @@
       }
     }
   }
+}
+
+@keyframes bobUp {
+  0% {
+    margin-top: 1.5vh;
+  }
+
+  50% {
+    margin-top: -1.5vh;
+  }
+
+  100% {
+    margin-top: 1.5vh;
+  }
+
 }

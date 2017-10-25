@@ -19,7 +19,6 @@ function checkForExistingConvo(memberHash, membersArr, convos) {
 
     for (let j = 0; j < members.length; j++) {
       let userName = members[j].userName;
-      console.log(userName);
       if(!memberHash[userName]) break;
       if(j === members.length - 1) return filteredConvos[i];
     }
@@ -53,7 +52,7 @@ class MessageForm extends React.Component {
       fuzzySearch: [],
       isTyping: false,
       seeTyping: false,
-      node: preExistingNode ? preExistingNode : this.props.node,
+      node: !this.props.node ? preExistingNode : this.props.node,
       existing
     };
     this.trieQuery = this.trieQuery.bind(this);
@@ -66,12 +65,13 @@ class MessageForm extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.state);
     let {socket, profile} = this.props;
     let {node} = this.state;
     let id;
 
     if(node) id = node.convoHubID;
-    socket.removeListener('showTyping*')
+    socket.removeListener('showTyping*');
 
     if(id)
       !socket.hasListeners(`showTyping-${id}`) ?
@@ -97,6 +97,7 @@ class MessageForm extends React.Component {
 
       null;
   }
+
 
 
   compileConvo() {
@@ -204,6 +205,10 @@ class MessageForm extends React.Component {
     let messageSubmission = compiledData.convoHubID ?
     this.props.postMessage:
     this.props.newConvo;
+
+    console.log(messageSubmission);
+    console.log(compiledData);
+
     messageSubmission(compiledData)
     .then(node => {
       if(!compiledData.convoHubID) {

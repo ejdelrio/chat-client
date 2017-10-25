@@ -14,6 +14,7 @@ class Conversations extends React.Component {
       <section id={'conversations'}>
         <ul>
           {this.props.convos.map((node, ind) => {
+            console.log(node);
             return(
               <li
                 key={ind}

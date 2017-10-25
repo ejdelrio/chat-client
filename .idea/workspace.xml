@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="96bba6c0-3bc1-4915-9af4-e19856604c33" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/conversations/index.js" afterPath="$PROJECT_DIR$/src/component/conversations/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/message-form/_message-form.scss" afterPath="$PROJECT_DIR$/src/component/message-form/_message-form.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/message-form/index.js" afterPath="$PROJECT_DIR$/src/component/message-form/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/chat-footer/_chat-footer.scss" afterPath="$PROJECT_DIR$/src/component/chat-footer/_chat-footer.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/svgs/index.js" afterPath="$PROJECT_DIR$/src/component/svgs/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +18,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_message-form.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_message-form.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/message-form/_message-form.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2545">
+            <state relative-caret-position="-1748">
               <caret line="171" column="11" lean-forward="true" selection-start-line="171" selection-start-column="11" selection-end-line="171" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/component/svgs/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_chat-footer.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/chat-footer/_chat-footer.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,16 +102,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_content.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/content/_content.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/message-form/convo-content/index.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -103,20 +112,6 @@
                 <element signature="e#748#783#0" expanded="true" />
                 <element signature="e#1672#1720#0" expanded="true" />
                 <element signature="e#1760#1822#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/content/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1136">
-              <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-              <folding>
-                <element signature="e#458#602#0" expanded="true" />
-                <element signature="e#919#1041#0" expanded="true" />
-                <element signature="e#1086#1212#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -188,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/component/contacts/_contacts.scss" />
         <option value="$PROJECT_DIR$/src/component/auth-page/_auth-page.scss" />
         <option value="$PROJECT_DIR$/src/component/header-bar/index.js" />
-        <option value="$PROJECT_DIR$/src/component/svgs/index.js" />
         <option value="$PROJECT_DIR$/src/action/profile-action.js" />
         <option value="$PROJECT_DIR$/src/component/contacts/index.js" />
         <option value="$PROJECT_DIR$/src/component/home/index.js" />
@@ -211,6 +205,8 @@
         <option value="$PROJECT_DIR$/src/component/message-form/index.js" />
         <option value="$PROJECT_DIR$/src/component/conversations/index.js" />
         <option value="$PROJECT_DIR$/src/component/message-form/_message-form.scss" />
+        <option value="$PROJECT_DIR$/src/component/chat-footer/_chat-footer.scss" />
+        <option value="$PROJECT_DIR$/src/component/svgs/index.js" />
       </list>
     </option>
   </component>
@@ -275,6 +271,13 @@
               <item name="chat-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="chat-footer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
               <item name="conversations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -283,6 +286,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
               <item name="message-form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chat-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="svgs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chat-client" type="b2602c69:ProjectViewProjectNode" />
@@ -337,12 +347,12 @@
       <workItem from="1508376585715" duration="40861000" />
       <workItem from="1508610215940" duration="14095000" />
       <workItem from="1508732620168" duration="2890000" />
-      <workItem from="1508817899120" duration="24603000" />
+      <workItem from="1508817899120" duration="25756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114090000" />
+    <option name="totallyTimeSpent" value="115243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -504,13 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/chat-footer/_chat-footer.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/home/_home.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -539,13 +542,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/svgs/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -776,28 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/message-form/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="185" column="6" lean-forward="false" selection-start-line="185" selection-start-column="6" selection-end-line="185" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <element signature="e#1245#1488#0" expanded="true" />
-            <element signature="e#2763#2790#0" expanded="true" />
-            <element signature="e#3217#3280#0" expanded="true" />
-            <element signature="e#3684#3783#0" expanded="true" />
-            <element signature="e#3937#3983#0" expanded="true" />
-            <element signature="e#5627#5765#0" expanded="true" />
-            <element signature="e#5807#5955#0" expanded="true" />
-            <marker date="1508916279000" expanded="true" signature="4679:5579" ph="..." />
-            <marker date="1508916279000" expanded="true" signature="4703:5125" ph="..." />
-            <marker date="1508916279000" expanded="true" signature="5143:5562" ph="..." />
-            <marker date="1508916279000" expanded="true" signature="5168:5344" ph="..." />
-            <marker date="1508916279000" expanded="true" signature="5371:5543" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/conversations/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
@@ -827,8 +801,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/message-form/_message-form.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2545">
+        <state relative-caret-position="-1748">
           <caret line="171" column="11" lean-forward="true" selection-start-line="171" selection-start-column="11" selection-end-line="171" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/message-form/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="185" column="6" lean-forward="false" selection-start-line="185" selection-start-column="6" selection-end-line="185" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#1245#1488#0" expanded="true" />
+            <element signature="e#2763#2790#0" expanded="true" />
+            <element signature="e#3217#3280#0" expanded="true" />
+            <element signature="e#3684#3783#0" expanded="true" />
+            <element signature="e#3937#3983#0" expanded="true" />
+            <element signature="e#5627#5765#0" expanded="true" />
+            <element signature="e#5807#5955#0" expanded="true" />
+            <marker date="1508916279000" expanded="true" signature="4679:5579" ph="..." />
+            <marker date="1508916279000" expanded="true" signature="4703:5125" ph="..." />
+            <marker date="1508916279000" expanded="true" signature="5143:5562" ph="..." />
+            <marker date="1508916279000" expanded="true" signature="5168:5344" ph="..." />
+            <marker date="1508916279000" expanded="true" signature="5371:5543" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/chat-footer/_chat-footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/svgs/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="28" column="4" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
           <folding />
         </state>
       </provider>

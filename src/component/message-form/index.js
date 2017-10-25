@@ -175,18 +175,17 @@ class MessageForm extends React.Component {
     this.props.postMessage:
     this.props.newConvo;
 
-    console.log(messageSubmission);
-    console.log(compiledData);
 
     messageSubmission(compiledData)
     .then(node => {
+      this.props.socket.emit('clearTimer')
       if(!compiledData.convoHubID) {
         this.props.close();
         this.props.openNewConvo(node.members, true, node);
       }
     })
     .then(this.setState({content: ''}))
-    .then(this.props.socket.emit('clearTimer'))
+
   }
 
 

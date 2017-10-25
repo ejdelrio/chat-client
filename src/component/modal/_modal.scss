@@ -10,15 +10,12 @@
 
   &> section > button {
     position: absolute;
-    width: 90%;
     margin-left: 5%;
     bottom: 5%;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     background: #e2ecee;
     color: #ff5549;
-    height: 7vh;
-    font-size: 5vw;
     cursor: pointer;
   }
 }
